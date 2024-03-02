@@ -1,0 +1,245 @@
+main.purchase-page {
+    height: auto;
+    .menu {
+        background: black;
+    }
+    .home-section {
+        height: calc(100vh - 100px);
+        background-color: black;
+        display: flex;
+        align-items: center;
+        @media screen and (max-width: 768px) {
+            height: calc(100vh - 75px);
+            background: radial-gradient(
+                37.36% 30.86% at 38.06% 59.62%,
+                rgba(0, 0, 0, 0) 0%,
+                #000000 100%
+            );
+        }
+        @media screen and (max-width: 575px) {
+            align-items: center;
+            height: calc(100vh - 75px);
+            .btn-desktop {
+                display: none !important;
+            }
+            .btn-mobile {
+                margin: 0px 8px;
+            }
+        }
+        @media screen and (min-width: 576px) {
+            .btn-mobile {
+                display: none !important;
+            }
+            .btn-desktop {
+                margin-left: 5vw;
+            }
+        }
+
+        div.container {
+            width: 100%;
+            div.row {
+                .col-sm-7 {
+                    max-width: 498px;
+                    h4.title1 {
+                        font-size: 24px;
+                        font-weight: 600;
+                        text-transform: uppercase;
+                        margin-bottom: 1.5vw;
+                    }
+                    h3.title2 {
+                        margin-left: 5vw;
+                        margin-bottom: 1vw;
+                        font-style: italic;
+                        font-weight: 800;
+                        text-transform: uppercase;
+                    }
+                    p.text {
+                        font-size: 16px;
+                    }
+                    button.btn-green {
+                        display: block;
+                        margin: auto;
+                        width: 320px;
+                        padding: 10px;
+                        font-size: 30px;
+                        font-weight: 700;
+                    }
+                    @media screen and (max-width: 1480px) {
+                        h4.title1 {
+                            font-size: 24px;
+                        }
+                        h3.title2 {
+                            font-size: 48px;
+                        }
+                        p.text {
+                            font-size: 16px;
+                            margin-right: 5vw;
+                        }
+                        button.btn-green {
+                            width: 250px;
+                            font-size: 22px;
+                        }
+                    }
+                    @media screen and (max-width: 768px) {
+                        width: 500px;
+                        margin-top: 40px;
+                        order:2;
+                        gap:10px;
+                        background-image: url("../../images/green-coin.svg");
+                        background-repeat: no-repeat;
+                        background-size: 65%;
+                        background-position: 50% 90px;
+                        height: 410px;
+                        display: flex;
+                        justify-content: start !important;
+                        h4.title1 {
+                            font-size: 24px;
+                            text-align: center;
+                            width: inherit;
+                        }
+                        h3.title2 {
+                            font-size: 48px;
+                            text-align: center;
+                            width: inherit;
+                            margin-left: 0;
+                        }
+                        p.text {
+                            font-size: 16px;
+                            margin-right: 0vw;
+                            text-align: center;
+                            width: inherit;
+                        }
+                        .btn-desktop{
+                            margin-left: 0;
+                        }
+                        // button.btn-green {
+                        //     width: 250px;
+                        //     font-size: 30px;
+                        // }
+                    }
+                    @media screen and (max-width: 575px) {
+                        max-width:100%;
+                        text-align: center;
+                        align-items: center !important;
+                        padding: 10px 20px;
+                        margin-top: 20px;
+                        order: 1;
+                        background: none;
+                        height: auto;
+                        h4.title1 {
+                            font-size: 22px;
+                            margin: 10px 0px;
+                            text-align: center;
+                            width: auto;
+                            margin-left: 0;
+                        }
+                        h3.title2 {
+                            font-size: 48px;
+                            margin: 10px 0px;
+                            text-align: center;
+                            width: auto;
+                        }
+                        p.text {
+                            // max-width:290px;
+                            font-size: 16px;
+                            margin: 10px 25px;
+                            text-align: left;
+                            text-align: center;
+                            width: auto;
+                        }
+                        button.btn-green {
+                            margin-top: 20px;
+                            width: 200px;
+                            padding: 7px;
+                            font-size: 16px;
+                        }
+                    }
+                }
+                .col-sm-5 {
+                    div.hero-image {
+                        width: 100%;
+                        height: 530px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        background-image: url("../../images/green-coin.svg");
+                        background-repeat: no-repeat;
+                        background-size: contain;
+                        img {
+                            width: 100%;
+                        }
+                    }
+                    .text-left {
+                        font-size: 24px;
+                        line-height: 29px;
+                        font-variant: small-caps;
+                        color: #ffffff;
+                    }
+                    @media screen and (max-width: 768px) {
+                        width: 500px;
+                        margin-bottom: 40px;
+                        order: 1;
+                        div.hero-image {
+                            width: 100%;
+                            height: 200px;
+                            justify-content: start;
+                            // background-position: -30px 70px;
+                            background: none;
+                            div {
+                                width: 100%;
+                                .text-left {
+                                    font-weight: bold;
+                                    font-size: 24px;
+                                    line-height: 29px;
+                                    font-variant: small-caps;
+                                    color: #ffffff;
+                                }
+                                .token-value{ 
+                                    font-size: 100px;
+                                    line-height: 0.9;
+                                    // font-size: 70px;
+									// color:red;
+                                    /* i comment your changes */
+                                }
+                                .token-left{
+                                    font-size: 24px;
+                                }
+                            }
+                        }
+                    }
+                    @media screen and (max-width: 575px) {
+                        width: 100%;
+                        padding: 10px 20px 0;
+                        margin-bottom: 0;
+                        div.hero-image {
+                            width: 100%;
+                            height: 200px;
+                            justify-content: start;
+                            background-image: url("../../images/green-coin.svg");
+                            background-position: -30px 70px;
+                            background-size: contain;
+                            background-repeat: no-repeat;
+                            div {
+                                width: 100%;
+                                .text-left {
+                                    font-weight: bold;
+                                    font-size: 24px;
+                                    line-height: 29px;
+                                    font-variant: small-caps;
+                                    color: #ffffff;
+                                }
+                                .token-value{
+                                    font-size: 64px;
+                                    line-height: 1;
+                                }
+                                .token-left{
+                                    font-size: 24px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
