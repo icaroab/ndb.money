@@ -1,0 +1,211 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+*:focus {
+    outline: none;
+}
+
+body {
+    background-color: $black;
+    main {
+        @extend %set-height;
+        overflow-x: hidden !important;
+    }
+}
+
+a,
+button,
+.btn {
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+}
+a:hover {
+    text-decoration: none;
+}
+
+ul {
+    margin: 0;
+    padding-left: 0;
+    list-style: none;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+.z-999 {
+    z-index: 999 !important;
+}
+.z-n999 {
+    z-index: -999 !important;
+}
+
+.cursor-pointer {
+    cursor: pointer !important;
+}
+.border-transparent {
+    border-color: transparent !important;
+}
+.border-cyan {
+    border-color: cyan !important;
+}
+.border-grey {
+    border-color: grey !important;
+}
+.overflow-x-auto {
+    overflow-x: auto !important;
+    white-space: nowrap;
+}
+.overflow-y-hidden {
+    overflow-y: hidden !important;
+}
+
+.btn-primary {
+    transition: 500ms;
+    &:hover {
+        opacity: 0.65;
+    }
+}
+
+.bg-clip-unset {
+    background-clip: unset !important;
+}
+
+.hover\:text-green {
+    transition: 500ms;
+    &:hover {
+        color: $green;
+    }
+}
+
+.password-eye-icon {
+    position: absolute;
+    color: rgb(179, 178, 178);
+    width: 20px;
+    height: 20px;
+    top: 38.5px;
+    right: 10px;
+    transition: 500ms;
+    cursor: pointer;
+    &:hover {
+        color: $black;
+    }
+}
+.gap-10 {
+    gap: 6rem !important;
+}
+
+.width-max-content {
+    width: max-content !important;
+}
+
+.mt-16px {
+    margin-top: 16px;
+}
+
+.placeholder\:text-light {
+    &::placeholder {
+        color: lightgrey !important;
+    }
+}
+.py-12px {
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+.py-10px {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.px-55px {
+    padding-left: 55px;
+    padding-right: 55px;
+}
+.pl-8px {
+    padding-left: 8px;
+}
+
+.hover\:bg-dark {
+    transition: 500ms;
+    &:hover {
+        background-color: #151515 !important;
+    }
+}
+
+.text-justify {
+    text-align: justify !important;
+}
+
+.w-316px {
+    width: 316px !important;
+}
+// Begin: New Font Sizes
+@for $size from 12 to 48 {
+    .fs-#{$size}px {
+        font-size: #{$size}px !important;
+    }
+}
+
+.scale-75 {
+    transform: scale(0.75, 0.75);
+    @include mq("phone", min) {
+        transform: scale(1, 1);
+    }
+}
+.border-bottom-1px {
+    border-bottom: 1px !important;
+}
+.fv-small-caps {
+    font-variant: small-caps !important;
+}
+.fw-500 {
+    font-weight: 500 !important;
+}
+.lh-25px {
+    line-height: 25px !important;
+}
+.noselect {
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently
+                                    supported by Chrome, Edge, Opera and Firefox */
+}
+// End: New Font Sizes
+
+//Begin: Backgourn Color
+.bg-green {
+    background: $green;
+}
+.bg-red {
+    background: #e8503a;
+}
+.bg-gray {
+    background: $grey;
+}
+.mt-1 {
+    margin-top: 1px !important;
+}
+//End: Background Color
+
+.scale-70 {
+    transform: scale(0.7, 0.7);
+}
+.mt-30px {
+    margin-top: 30px;
+}
+.mt-3px {
+    margin-top: 3px !important;
+}
+.ml-45px {
+    margin-left: 45px !important;
+}
+
+.bg-black-10 {
+    background-color: rgba(0, 0, 0, 0.1);
+}

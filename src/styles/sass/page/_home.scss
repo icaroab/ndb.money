@@ -1,0 +1,264 @@
+.home-page {
+    overflow-y: auto;
+    @include mq("phone", max) {
+        overflow-y: hidden;
+    }
+    .menu {
+        background-color: transparent;
+    }
+    .hero-image {
+        width: 90%;
+    }
+    .home-section {
+        background: none;
+        // @extend %set-height2;
+        height: calc(100vh - 100px);
+        display: flex;
+        align-items: center;
+        text-align: center;
+        @include mq("tablet", max) {
+            height: calc(100vh - 75px);
+        }
+        .left-part {
+            .tokens-lower-part {
+                // width: max-content;
+                .token-left {
+                    font-weight: bold;
+                    font-size: 28px;
+                    line-height: 39px;
+                    color: white;
+                    font-variant: small-caps;
+                    text-align: center;
+                }
+                .token-value {
+                    // letter-spacing: 0.03em;
+                    font-variant: small-caps;
+                    text-align: center;
+                }
+                @include mq("tablet", max) {
+                    .token-value {
+                        font-size: 100px;
+                    }
+                }
+                @include mq("phone", max) {
+                    width: 100%;
+                    .token-left {
+                        font-size: 24px;
+                    }
+                    .token-value {
+                        font-size: 64px;
+                    }
+                }
+                .cta {
+                    margin-top: 10px !important;
+                    @include mq("tablet", max) {
+                        margin-top: 60px !important;
+                    }
+                    @include mq("mobile", max) {
+                        margin-top: 40px !important;
+                    }
+                }
+            }
+        }
+        .right-part {
+            position: relative;
+            align-items: center;
+            justify-content: flex-end;
+            @include mq("tablet", max) {
+                position: absolute;
+                left: 0;
+                z-index: -1;
+                bottom: 0;
+                img {
+                    width: 550px;
+                }
+            }
+        }
+        .home-title {
+            font-weight: bold;
+            font-size: 48px;
+            line-height: 59px;
+            text-align: right;
+            // width: max-content;
+            font-variant: small-caps;
+            margin-bottom: 30px;
+            padding-right: 13%;
+            @include mq("tablet", max) {
+                font-size: 48px;
+                line-height: 59px;
+                text-align: center;
+                padding-right: 0;
+            }
+        }
+        .home-title-mobile {
+            font-weight: bold;
+            font-size: 24px;
+            line-height: 29px;
+            text-align: center;
+            font-variant: small-caps;
+        }
+        .btn-green {
+            padding: 8px 52px;
+            margin: 50px 0 24px;
+            border-radius: unset;
+            font-size: 30px;
+            @include mq("phone", max) {
+                margin: 20px 0 5px;
+            }
+        }
+    }
+}
+
+.countdown-wrapper {
+    line-height: 6px;
+    .time-section {
+        text-align: center;
+        .time {
+            font-weight: bold;
+            font-weight: bold;
+            font-size: 36px;
+            line-height: 44px;
+            letter-spacing: 0.05em;
+            @include mq("tablet", max) {
+                font-size: 37.8092px;
+                line-height: 46px;
+            }
+            @include mq("phone", max) {
+                font-size: 64px;
+                line-height: 78px;
+                letter-spacing: -0.02em;
+            }
+            &-text {
+                font-weight: 500;
+                font-size: 14px;
+                line-height: 17px;
+                letter-spacing: -0.02em;
+                text-transform: uppercase;
+                color: #8f8f8f;
+                @include mq("tablet", max) {
+                    font-size: 14x;
+                    line-height: 15px;
+                }
+                @include mq("mobile", max) {
+                    font-size: 17x;
+                    line-height: 15px;
+                }
+            }
+        }
+    }
+}
+
+.refer-modal {
+    max-width: 539px;
+    border: unset;
+    padding: 30px 40px;
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        font-weight: bold;
+        font-size: 25px;
+        line-height: 30px;
+        color: white;
+        letter-spacing: -0.025em;
+    }
+    &__body {
+        color: white;
+        font-size: 18px;
+        &-label {
+            font-size: 13px;
+            line-height: 16px;
+            font-weight: normal;
+            text-emphasis-color: white;
+        }
+        &-invite-btn {
+            font-size: 30px;
+            line-height: 40px;
+            font-variant: small-caps;
+            font-weight: bold;
+            background-color: $green;
+            transition: 500ms;
+            &:hover {
+                color: $black;
+            }
+            text-align: center;
+            display: inline-block;
+            cursor: pointer;
+            margin-top: 45px;
+            padding: 5px 64px;
+            padding-top: 2px;
+        }
+    }
+    &__footer {
+        align-items: center;
+        button {
+            display: block;
+        }
+        .btn-cancel {
+            margin-top: 11px;
+            background-color: unset;
+            border: unset;
+            font-size: 12px;
+            line-height: 23px;
+            color: white;
+        }
+        .btn-primary {
+            font-weight: bold;
+            font-size: 18px;
+            line-height: 22px;
+            padding: 15px 95px;
+        }
+    }
+    .form {
+        padding: 18px 51px;
+        @include mq("phone", max) {
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+}
+
+.ReactModal__Overlay {
+    opacity: 0;
+    transition: opacity 50ms;
+}
+
+.ReactModal__Overlay--after-open {
+    opacity: 1;
+}
+
+.ReactModal__Overlay--before-close {
+    opacity: 0;
+}
+.token {
+    &-left {
+        font-size: 24px;
+        line-height: 29px;
+        letter-spacing: 0.01em;
+        font-variant: small-caps;
+        color: #ffffff;
+        @include mq("tablet", max) {
+            font-size: 28px;
+            line-height: 35px;
+        }
+        @include mq("phone", max) {
+            font-size: 20px;
+            line-height: 25px;
+            text-align: center;
+        }
+    }
+    &-value {
+        font-weight: bold;
+        font-size: 100px;
+        line-height: 122px;
+        font-variant: small-caps;
+        @include mq("tablet", max) {
+            font-size: 78px;
+            line-height: 96px;
+        }
+        @include mq("phone", max) {
+            font-size: 60px;
+            line-height: 72px;
+            text-align: center;
+        }
+    }
+}

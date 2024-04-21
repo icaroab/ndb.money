@@ -1,0 +1,270 @@
+p.title {
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    height: 60px;
+    line-height: 60px;
+}
+
+a:hover {
+    color: $green;
+}
+
+nav.MuiPagination-root {
+    display: flex;
+    justify-content: end;
+    li {
+        width: 30px;
+    }
+    button {
+        color: #ffffff;
+        &:hover {
+            background-color: #23c86573;
+            @include mq("phone", max) {
+                background-color: transparent;
+            }
+        }        
+    }
+    @include mq("phone", max) {
+        justify-content: center;
+        li {
+            width: 24px;
+        }
+        button {
+            font-size: 12px;
+        }
+    }
+    button.Mui-selected {
+        background-color: $green;
+        &:hover {
+            background-color: $green;
+        }
+    }
+    div.MuiPaginationItem-root {
+        color: #ffffff;
+    }
+}
+
+div.MuiFormControl-root {
+    width: 100%;
+    div.MuiOutlinedInput-root {
+        border: 1px solid #ffffff;
+        height: 32px;
+        border-radius: 0;
+        color: white;
+        width: 100%;
+        svg {
+            color: white;
+        }
+        .MuiOutlinedInput-notchedOutline {
+            border-color: transparent !important;
+        }
+    }
+}
+
+div.MuiPaper-root {
+    padding: 5px 0;
+    span.MuiTypography-caption {
+        color: black !important;
+    }
+}
+
+.MuiAlert-standardError {
+    background: transparent !important;
+    .MuiAlert-message {
+        color: #e17070;
+    }
+}
+.MuiAlert-standardSuccess {
+    background: transparent !important;
+    .MuiAlert-message {
+        color: #3bc545;
+    }
+}
+
+input.black_input {
+    background-color: #1e1e1e;
+    color: #ffffff;
+    height: 32px;
+    font-size: 14px;
+    font-weight: 400;
+    border: 1px solid;
+    padding-left: 10px;
+    width: 100%;
+}
+
+textarea.black_input {
+    background-color: #1e1e1e;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 400;
+    border: 1px solid #ffffff;
+    padding: 10px;
+    width: 100%;
+}
+
+input.white_input {
+    background-color: #ffffff;
+    color: #1e1e1e;
+    height: 32px;
+    font-size: 14px;
+    font-weight: 400;
+    border: 1px solid;
+    padding-left: 10px;
+    width: 100%;
+}
+
+div.black_input {
+    border: 1px solid white;
+}
+
+p.error,
+svg.error {
+    color: #e17070 !important;
+}
+
+input.error,
+div.error,
+textarea.error {
+    border: 1px solid #e17070!important;
+}
+
+p.disabled {
+    color: dimgray;
+}
+
+input.disabled {
+    border: 1px solid dimgray !important;
+}
+
+.previous {
+    font-size: 14px;
+    font-weight: 500;
+    color: black;
+    background-color: #ffffff;
+    cursor: pointer;
+    padding: 7px 15px;
+    &:hover {
+        border: 1px solid $green;
+    }
+}
+.next {
+    font-size: 14px;
+    font-weight: 500;
+    background-color: $green;
+    color: white;
+    cursor: pointer;
+    padding: 7px 15px;
+    &:hover {
+        color: black;
+    }
+}
+
+.custom_scrollbar {
+    &::-webkit-scrollbar  {
+        height: 0;
+        width: 6px;
+    }
+    &::-webkit-scrollbar-thumb  {
+        background-color: #ffffff;
+    }
+    &::-webkit-scrollbar-track  {
+        background-color: #464646;
+    }
+}
+
+.delete-confirm-modal {
+    max-width: 600px;
+}
+
+div.modal {
+    z-index: 9999;
+}
+
+div.profile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #cccccc;
+
+    width: 180px;
+    height: 240px;
+    @include mq('tablet', max) {
+        width: 150px;
+        height: 200px;
+    }
+    @include mq('phone', max) {
+        width: 180px;
+        height: 240px;
+    }
+    div.image_div {
+        position: relative;
+        width: 110px;
+        div {
+            position: absolute;
+            svg {
+                width: 100%;
+                height: auto;
+                position: absolute;
+            }
+        }
+        img {
+            width: 100%;
+        }
+    }
+}
+
+
+div.searchBar {
+    margin: 5px 0;
+    div.input-group {
+        width: 50%;
+        margin-top: 5px
+    }
+    button.btn {
+        color: white;
+        border: 1px solid dimgray;
+        &:hover {
+            color: $green;
+        }
+    }
+    input.form-control {
+        background-color: #1e1e1e;
+        color: white;
+        border: 1px solid dimgray;
+    }
+    @include mq('phone', max) {
+        div.input-group {
+            width: 100%;
+        }
+    }
+}
+
+div.button_div {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+    .previous {
+        font-size: 14px;
+        font-weight: 500;
+        color: black;
+        background-color: #ffffff;
+        cursor: pointer;
+        padding: 7px 15px;
+        &:hover {
+            border: 1px solid $green;
+        }
+    }
+    .next {
+        font-size: 14px;
+        font-weight: 500;
+        background-color: $green;
+        color: white;
+        cursor: pointer;
+        padding: 7px 15px;
+        &:hover {
+            color: black;
+        }
+    }
+}

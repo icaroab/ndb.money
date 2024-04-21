@@ -1,0 +1,917 @@
+@use "sass:math";
+.profile-page {
+    @include mq("phone", max) {
+        margin: 0rem;
+    }
+    .menu {
+        border-bottom: 2px solid #464646;
+    }
+    &__left {
+        padding: 0px 32px;
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        height: 100vh;
+        @include mq("laptop", max) {
+            height: 100%;
+        }
+        .user-info {
+            margin: 45px 0px;
+            @include mq("laptop", max) {
+                margin: 24px 0;
+            }
+            @include mq("phone", max) {
+                margin: 48px 0;
+            }
+            &__avatar {
+                width: 123.42px;
+                height: 93.17px;
+                margin: auto;
+            }
+            &__name {
+                display: flex;
+                align-items: center;
+                margin-top: 24px;
+                font-weight: 600;
+                font-size: 24px;
+                line-height: 23px;
+                color: white;
+                @include mq("phone", max) {
+                    justify-content: center;
+                }
+            }
+            .silver-cnt {
+                font-weight: 600;
+                font-size: 12px;
+                line-height: 15px;
+                text-align: end;
+                margin-top: 16px;
+            }
+            .timeframe-bar {
+                background-color: #464646;
+                height: 6px;
+                margin-top: 0;
+                .timeleft {
+                    background: #23c865;
+                    left: 0;
+                }
+            }
+        }
+        @include mq("laptop", max) {
+            padding-left: 12px;
+            padding-right: 12px;
+        }
+        @include mq("laptop", max) {
+            border: unset;
+        }
+        .profile-tab {
+            .react-tabs__tab {
+                font-weight: bold;
+                font-size: 24px;
+                line-height: 29px;
+                color: #464646;
+                text-transform: uppercase;
+                padding: 10px 0;
+                @include mq("laptop", max) {
+                    font-size: 18px;
+                }
+                &--selected {
+                    background-color: unset;
+                    border: unset;
+                    color: white;
+                }
+                &-list {
+                    display: flex;
+                    flex-direction: column;
+                    border: unset;
+                    @include mq("laptop", max) {
+                        display: none;
+                    }
+                }
+            }
+            &__select {
+                display: none;
+                width: 300px;
+                margin: 0 auto;
+                .css-1s2u09g-control,
+                .css-1pahdxg-control {
+                    @extend %select-style;
+                    padding-top: 7px;
+                    padding-bottom: 7px;
+                    .css-qc6sy-singleValue {
+                        text-align: center;
+                        font-weight: bold;
+                        font-size: 24px;
+                        line-height: 29px;
+                        color: white;
+                        text-transform: uppercase;
+                    }
+                }
+                .css-1okebmr-indicatorSeparator {
+                    display: none;
+                }
+                .css-319lph-ValueContainer {
+                    padding: 0;
+                }
+                .css-tlfecz-indicatorContainer {
+                    padding: 0;
+                }
+                .css-6j8wv5-Input {
+                    display: none;
+                }
+                @include mq("laptop", max) {
+                    display: block;
+                }
+            }
+            .react-tabs__tab-panel {
+                display: none;
+            }
+        }
+    }
+    &__right {
+        padding: 0 32px;
+        @include mq("tablet", max) {
+            padding: 0;
+        }
+        @include mq("phone", max) {
+            padding-left: 12px;
+            padding-right: 12px;
+            padding-bottom: 50px;
+        }
+        h4 {
+            font-weight: bold;
+            font-size: 18px;
+            line-height: 22px;
+            letter-spacing: 0.04em;
+            color: white;
+            text-transform: uppercase;
+        }
+        .br {
+            border-right: 2px solid #464646;
+            @include mq("tablet", max) {
+                border: none;
+            }
+        }
+        .detail-tab {
+            .react-tabs {
+                &__tab-list {
+                    border: none;
+                    margin-bottom: 12px;
+                }
+                &__tab {
+                    font-weight: bold;
+                    font-size: 18px;
+                    line-height: 22px;
+                    letter-spacing: 0.04em;
+                    color: white;
+                    opacity: 0.3;
+                    text-transform: uppercase;
+                    &--selected {
+                        opacity: 1;
+                        background: none;
+                        border: none;
+                    }
+                }
+            }
+        }
+        .verify-delete {
+            display: flex;
+            justify-content: space-between;
+            .delete-account-link {
+                color: red;
+                cursor: pointer;
+                text-decoration: underline;
+            }
+        }
+        .account-details,
+        .tier-details {
+            h4 {
+                border-bottom: 2px solid #464646;
+                padding-bottom: 15px;
+                padding-left: 12px;
+                margin-bottom: 0;
+                @include mq("phone", max) {
+                    padding-top: 35px;
+                    padding-left: 0;
+                    padding-right: 0;
+                }
+            }
+            .row {
+                border-bottom: 2px solid #464646;
+                &:first-child {
+                    border-top: 2px solid #464646;
+                }
+                .col-6 {
+                    font-family: "Montserrat";
+                    font-weight: bold;
+                    font-size: 18px;
+                    line-height: 22px;
+                    letter-spacing: 0.04em;
+                    color: white;
+                    text-transform: uppercase;
+                    padding: 25px 12px;
+                    @include mq("phone", max) {
+                        font-size: 16px;
+                        font-weight: normal;
+                        line-height: 19.5px;
+                        padding-left: 0;
+                        padding-right: 0;
+                    }
+                    .change-pwd {
+                        font-weight: bold;
+                        font-size: 18px;
+                        line-height: 22px;
+                        letter-spacing: 0.04em;
+                        text-transform: uppercase;
+                        padding: 15px 26px;
+                        background: #1e1e1e;
+                        @include mq("phone", max) {
+                            display: none;
+                        }
+                    }
+                }
+            }
+            .change-password {
+                .col-6 {
+                    padding: 9px 12px;
+                    display: flex;
+                    align-items: center;
+                    @include mq("tablet", max) {
+                        padding: 25px 12px;
+                    }
+                    @include mq("phone", max) {
+                        padding-left: 0;
+                        padding-right: 0;
+                    }
+                }
+            }
+            .btn-pwd {
+                display: none;
+                font-weight: bold;
+                font-size: 18px;
+                line-height: 22px;
+                letter-spacing: 0.04em;
+                text-transform: uppercase;
+                padding: 15px 26px;
+                background: #1e1e1e;
+                @include mq("tablet", max) {
+                    display: block;
+                }
+            }
+            .account-security {
+                margin-top: 32px;
+                .row {
+                    .col-md-6 {
+                        padding: 25px 12px;
+                        display: flex;
+                        align-items: center;
+                        border-bottom: 2px solid #464646;
+                        @include mq("phone", max) {
+                            padding-left: 0;
+                            padding-right: 0;
+                        }
+                        .security-item {
+                            margin-left: 12px;
+                            display: flex;
+                            flex-direction: column;
+                            width: 100%;
+                            @include mq("phone", max) {
+                                flex-direction: row;
+                                justify-content: space-between;
+                            }
+                            p {
+                                font-weight: 500;
+                                font-size: 13px;
+                                line-height: 19px;
+                            }
+                            .security-name {
+                                color: white;
+                            }
+                            .security-link {
+                                cursor: pointer;
+                                font-size: 13px;
+                                font-weight: 500;
+                                color: #23c865;
+                                text-decoration: underline;
+                            }
+                        }
+                        .security-item-disable {
+                            margin-right: 10px;
+                            margin-top: 18px;
+                            .security-link {
+                                cursor: pointer;
+                                font-size: 13px;
+                                font-weight: 500;
+                                color: red;
+                                text-decoration: underline;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .notification-set {
+            @include mq("phone", max) {
+                margin-top: 35px;
+            }
+            .notification-tab {
+                .react-tabs__tab {
+                    font-weight: bold;
+                    font-size: 18px;
+                    line-height: 22px;
+                    letter-spacing: 0.04em;
+                    color: #626161;
+                    text-transform: uppercase;
+                    &-list {
+                        border-bottom: 2px solid #464646;
+                    }
+                    &--selected {
+                        color: white;
+                        background-color: unset;
+                        border: unset;
+                    }
+                }
+                .recent-notification-wrapper {
+                    @include custom-scroll(250px);
+                    overflow-x: hidden;
+                    overflow-y: auto;
+                    height: 520px;
+                }
+                .recent-item,
+                .notification-item {
+                    display: flex;
+                    align-items: center;
+                    padding: 20px 16px;
+                    border-bottom: 2px solid #464646;
+                    @include mq("phone", max) {
+                        padding-left: 0;
+                        padding-right: 0;
+                    }
+                }
+                .recent-item {
+                    p {
+                        font-size: 18px;
+                        line-height: 22px;
+                        color: white;
+                        margin-left: 11px;
+                    }
+                }
+                .notification-item {
+                    justify-content: space-between;
+                    p {
+                        font-weight: bold;
+                        font-size: 17.9787px;
+                        line-height: 22px;
+                        letter-spacing: 0.04em;
+                        color: #ffffff;
+                        text-transform: uppercase;
+                    }
+                    .react-switch-bg {
+                        svg {
+                            display: none !important;
+                        }
+                    }
+                }
+            }
+        }
+        .connect-wallet {
+            text-align: center;
+            color: white;
+            button: {
+                max-width: 400px;
+            }
+            button:disabled,
+            button[disabled] {
+                border: 1px solid #999999;
+                background-color: #1d1d1d;
+                color: #666666;
+            }
+            h4 {
+                padding-bottom: 16px;
+                border-bottom: 2px solid #464646;
+                text-align: left;
+                @include mq("phone", max) {
+                    padding-top: 35px;
+                }
+            }
+            .row {
+                margin-top: 85px;
+                @include mq("laptop", max) {
+                    margin-top: 24px;
+                }
+                .connected {
+                    border: 1px solid #23c865;
+                    padding: 30px;
+                    p {
+                        color: #23c865;
+                        margin: 10px 0;
+                    }
+                    img {
+                        margin: 30px 0;
+                        width: 90px;
+                    }
+                }
+            }
+            .col-sm-6 {
+                margin-bottom: 16px;
+            }
+            .wallet-item {
+                cursor: pointer;
+                width: 100%;
+                height: 100%;
+                padding-top: 20px;
+                padding-bottom: 20px;
+                border: 2px solid white;
+                img {
+                    margin-bottom: 16px;
+                    width: 50px;
+                    height: 50px;
+                    @include mq("phone", max) {
+                        width: 32px;
+                        height: 32px;
+                    }
+                }
+                p {
+                    font-weight: 500;
+                    font-size: 16px;
+                    line-height: 20px;
+                    color: white;
+                }
+                &.inactive {
+                    border-color: grey;
+                    p {
+                        color: grey;
+                    }
+                    img {
+                        opacity: 0.5;
+                    }
+                }
+            }
+            .btn-primary {
+                margin-top: 56px;
+                font-size: 24px;
+                line-height: 29px;
+                padding: 7px 92px;
+                @include mq("laptop", max) {
+                    margin-top: 24px;
+                }
+                @include mq("phone", max) {
+                    width: 100%;
+                }
+            }
+        }
+        .sign-out {
+            text-align: center;
+            height: 100%;
+            h4 {
+                padding-bottom: 16px;
+                border-bottom: 2px solid #464646;
+                text-align: left;
+                @include mq("laptop", max) {
+                    margin-top: 16px;
+                }
+            }
+            p {
+                font-weight: bold;
+                font-size: 24px;
+                line-height: 29px;
+                margin-bottom: 46px;
+            }
+            .btn-primary {
+                font-size: 24px;
+                line-height: 29px;
+                padding: 7px 92px;
+                @include mq("phone", max) {
+                    width: 100%;
+                }
+            }
+        }
+    }
+    .get-verify {
+        text-decoration: underline;
+        &:hover {
+            color: white;
+        }
+    }
+}
+
+.pwd-modal {
+    max-width: 539px;
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        font-weight: bold;
+        font-size: 18px;
+        line-height: 22px;
+        text-transform: uppercase;
+        color: white;
+    }
+    &__footer {
+        align-items: center;
+        button {
+            display: block;
+        }
+        .btn-cancel {
+            margin-top: 11px;
+            background-color: unset;
+            border: unset;
+            font-size: 12px;
+            line-height: 23px;
+            color: white;
+        }
+        .btn-primary {
+            font-weight: bold;
+            font-size: 18px;
+            line-height: 22px;
+            padding: 15px 95px;
+        }
+    }
+    .form {
+        padding: 18px 51px;
+        @include mq("phone", max) {
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+}
+.delete-account-modal {
+    max-width: 950px;
+    height: 500px;
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        font-weight: bold;
+        font-size: 18px;
+        line-height: 22px;
+        text-transform: uppercase;
+        color: white;
+    }
+    .delete-account {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        padding-bottom: 50px;
+        .title {
+            font-size: 36px;
+        }
+        .content-text {
+            text-align: center;
+            font-size: 16px;
+        }
+        button {
+            width: 300px;
+            margin-top: 16px;
+        }
+        button:disabled,
+        button[disabled] {
+            border: 1px solid #999999;
+            background-color: #1d1d1d;
+            color: #666666;
+        }
+        .confirm-text {
+            width: 300px;
+            font-size: 16px;
+            line-height: 30px;
+            letter-spacing: 0.04em;
+            color: #ffffff;
+            border: 1px solid white;
+            background-color: $black;
+            padding: 10px;
+        }
+    }
+}
+.resend-2fa {
+    text-align: right;
+    a {
+        color: #23c865 !important;
+        font-size: 14px !important;
+    }
+}
+.dressup-modal {
+    max-width: 950px;
+    padding: 0px;
+    border: unset;
+
+    .expression-icons {
+        z-index: 0;
+    }
+    .facial-style-icons {
+        z-index: 1;
+    }
+
+    &__header {
+        display: flex;
+        justify-content: end;
+        font-weight: bold;
+        font-size: 18px;
+        line-height: 22px;
+        text-transform: uppercase;
+        color: white;
+    }
+    &-avatar-name {
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 23px;
+        margin-top: 30px;
+    }
+    &-sections-list {
+        color: #464646;
+        font-weight: bold;
+        font-size: 24px;
+        line-height: 29px;
+        margin-top: 30px;
+        margin-left: 30px;
+        margin-bottom: 30px;
+        font-variant: small-caps;
+        & > div {
+            cursor: pointer;
+            &.active {
+                color: white;
+            }
+        }
+    }
+    .btn-save {
+        color: white;
+        font-variant: small-caps;
+        font-weight: bold;
+        font-size: 24px;
+        text-align: center;
+        width: auto;
+        border: 1px solid white;
+        padding: 3px 43px;
+        margin-left: 45px;
+        margin-bottom: 30px;
+        vertical-align: middle;
+        transition: 500ms;
+        cursor: pointer;
+        &:hover {
+            background-color: white;
+            color: $black;
+        }
+    }
+    &-hair-section {
+        color: white;
+        font-variant: small-caps;
+        font-weight: bold;
+        font-size: 18px;
+        line-height: 22px;
+        letter-spacing: 0.04em;
+    }
+
+    &-items-horizontal-list {
+        scroll-behavior: smooth;
+        float: none;
+        overflow-x: auto !important;
+        white-space: nowrap;
+        overflow-y: hidden;
+        padding: 0px;
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        margin: 0px;
+        height: 200px;
+        & > div {
+            height: 200px;
+            width: 149px;
+            overflow: hidden;
+            display: inline-block;
+            float: none;
+            position: relative;
+            & > div {
+                position: absolute;
+                width: 100%;
+                text-align: center;
+                left: 0px;
+                bottom: 10px;
+            }
+            & > img {
+                bottom: 55px;
+                left: 13px;
+                position: absolute;
+                min-width: 118.92px;
+                min-height: 92.28px;
+                object-fit: cover;
+            }
+        }
+        &::-webkit-scrollbar {
+            height: 0px !important;
+        }
+        &::-webkit-scrollbar-track {
+            background: #666666 !important;
+        }
+        &::-webkit-scrollbar-thumb {
+            background: #ffffff !important;
+        }
+    }
+    &-avatar {
+        width: 107.69px;
+        height: 82.28px;
+        position: relative;
+        text-align: center;
+        margin: auto;
+        padding: 0px;
+        margin-top: 75px;
+        .empty-avatar {
+            width: max-content;
+            height: auto;
+        }
+        .isolated-icons {
+            width: max-content;
+            height: auto;
+            position: absolute;
+        }
+    }
+}
+// admin dress-up modal
+.dress-up-modal {
+    max-width: 950px;
+    padding: 0px;
+    border: unset;
+
+    div.profile {
+        margin: auto;
+        border: none;
+        @include mq("phone", max) {
+            height: 100px;
+            div.image_div {
+                width: 80px;
+            }
+        }
+    }
+
+    &__header {
+        font-weight: bold;
+        font-size: 18px;
+        line-height: 22px;
+        height: 22px;
+        text-transform: uppercase;
+        color: white;
+        position: relative;
+        div.close {
+            position: absolute;
+            right: 0;
+        }
+    }
+    &-avatar-name {
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 23px;
+        margin-top: 30px;
+    }
+    &-sections-list {
+        color: #464646;
+        font-weight: bold;
+        font-size: 24px;
+        line-height: 29px;
+        margin-top: 30px;
+        margin-left: 30px;
+        margin-bottom: 30px;
+        font-variant: small-caps;
+        & > div {
+            cursor: pointer;
+            &.active {
+                color: white;
+            }
+        }
+        @include mq("phone", max) {
+            margin-top: 5px;
+            margin-bottom: 5px;
+            font-size: 20px;
+            line-height: 24px;
+        }
+    }
+    .btn-save {
+        color: white;
+        font-variant: small-caps;
+        font-weight: bold;
+        font-size: 24px;
+        text-align: center;
+        width: auto;
+        border: 1px solid white;
+        padding: 3px 43px;
+        margin-left: 45px;
+        margin-bottom: 30px;
+        vertical-align: middle;
+        transition: 500ms;
+        background-color: inherit;
+        cursor: pointer;
+        &:hover {
+            background-color: white;
+            color: $black;
+        }
+        @include mq("phone", max) {
+            margin-bottom: 5px;
+            font-size: 20px;
+        }
+    }
+    &-hair-section {
+        color: white;
+        font-variant: small-caps;
+        font-weight: bold;
+        font-size: 18px;
+        line-height: 22px;
+        letter-spacing: 0.04em;
+    }
+    div.components {
+        border-left: 1px solid white;
+        padding: 20px;
+        @include mq("phone", max) {
+            border-left: none;
+            border-top: 1px solid white;
+        }
+    }
+    &-items-horizontal-list {
+        scroll-behavior: smooth;
+        float: none;
+        overflow-x: auto !important;
+        white-space: nowrap;
+        overflow-y: hidden;
+        padding: 0px;
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        margin: 0px;
+        height: 200px;
+        & > div {
+            height: 200px;
+            width: 149px;
+            overflow: hidden;
+            display: inline-block;
+            float: none;
+            position: relative;
+            & > div.image_div {
+                width: 100px;
+                margin-top: 50%;
+                margin-bottom: 10%;
+                position: relative;
+                div {
+                    position: absolute;
+                    svg {
+                        width: 100%;
+                        height: auto;
+                        position: absolute;
+                    }
+                }
+                img {
+                    width: 100%;
+                }
+            }
+            & > div.price_div {
+                width: 100%;
+                text-align: center;
+            }
+        }
+        @include mq("tablet", max) {
+            height: 170px;
+            & > div {
+                height: 170px;
+                width: 130px;
+                & > div.image_div {
+                    width: 80px;
+                }
+            }
+        }
+        @include mq("phone", max) {
+            height: 100px;
+            & > div {
+                height: 100px;
+                width: 80px;
+                & > div.image_div {
+                    width: 45px;
+                }
+                & > div.price_div {
+                    font-size: 12px;
+                }
+            }
+        }
+        &::-webkit-scrollbar {
+            height: 0px !important;
+        }
+        &::-webkit-scrollbar-track {
+            background: #666666 !important;
+        }
+        &::-webkit-scrollbar-thumb {
+            background: #ffffff !important;
+        }
+    }
+}
+
+.tfa-modal {
+    max-width: 539px;
+    &__header {
+        text-align: right;
+    }
+    &__body {
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        max-width: 340px;
+        font-weight: bold;
+        font-size: 18px;
+        line-height: 22px;
+        letter-spacing: 0.04em;
+        color: #ffffff;
+    }
+}

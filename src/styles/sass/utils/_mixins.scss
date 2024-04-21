@@ -1,0 +1,27 @@
+// Mixins
+@mixin mq($width, $type: min) {
+    @if map_has_key($breakpoints, $width) {
+        $width: map_get($breakpoints, $width);
+        @if $type == max {
+            $width: $width - 1px;
+        }
+        @media only screen and (#{$type}-width: $width) {
+            @content;
+        }
+    }
+}
+
+@mixin custom-scroll($height) {
+    max-height: calc(100vh - $height);
+    overflow-y: auto;
+    &::-webkit-scrollbar {
+        width: 4px;
+        height: 0px;
+    }
+    &::-webkit-scrollbar-track {
+        background-color: #666666;
+    }
+    &::-webkit-scrollbar-thumb {
+        background-color: white;
+    }
+}
