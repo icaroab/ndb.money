@@ -17,7 +17,7 @@ const Home = () => {
                                 <h4 className="title1 txt-green">ExcluSive pre-sale of</h4>
                                 <h3 className="title2">NDB TOKEN</h3>
                                 <p className="text">
-                                    Donâ€™t miss an opportunity to get ahold of NDB Tokens before
+                                    Don’t miss an opportunity to get ahold of NDB Tokens before
                                     anyone else at the fixed price before the auction starts.
                                 </p>
                                 {/* Desktop View Button */}
